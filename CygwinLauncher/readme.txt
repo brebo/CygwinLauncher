@@ -106,8 +106,3 @@ Ver 1.0.0
 ・Prism：http://msdn.microsoft.com/ja-jp/library/gg406140.aspx
   ライセンス：MSPL
 
-----------
-◇ 連絡先 ◇
-	Web : http://www.pantherweb.net/
-	E-mail : brebo@pantherweb.net
-
