@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("CygwinLauncher")]
-[assembly: AssemblyDescription("Cygwin を起動します。")]
+[assembly: AssemblyTitle("CygwinLauncherBase")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ぶれぼ")]
-[assembly: AssemblyProduct("CygwinLauncher")]
+[assembly: AssemblyProduct("CygwinLauncherBase")]
 [assembly: AssemblyCopyright("Copyright © ぶれぼ 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 次の GUID は、このプロジェクトが COM に公開される場合の、typelib の ID です
-[assembly: Guid("f0f97bf7-fa26-4dd5-b66c-c2aca6f3c699")]
+[assembly: Guid("bace72c9-d695-4116-91ea-65d1034adc2b")]
 
 // アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //

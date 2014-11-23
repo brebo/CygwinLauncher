@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("CygwinLauncherConfig")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ぶれぼ")]
 [assembly: AssemblyProduct("CygwinLauncherConfig")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © ぶれぼ 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

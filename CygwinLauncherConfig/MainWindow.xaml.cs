@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CygwinLauncherConfig
+namespace Brebo.CygwinLauncher.Config
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
