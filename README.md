@@ -40,10 +40,14 @@ http://www.microsoft.com/ja-jp/download/details.aspx?id=30653
 ※ ssh-host-config で設定して、サービスを起動する。
 * Putty 上で localhost に SSH で接続する設定を作成しておく。
 * Cygwin のホームディレクトリの .bashrc に以下の記述を追加する。
+
+    ```
     if [ -f ${HOME}/.init_dir  ]; then
 	    cd "$(cygpath "$(cat ${HOME}/.init_dir)")"
 	    rm ${HOME}/.init_dir
     fi
+    ```
+    
     
 * CygwinLauncherConfig.exe を起動して以下の設定を行う。
     * PuTTy のパス：PuTTy のファイル (putty.exe) を指定してください。
@@ -82,6 +86,6 @@ Ver 1.0.0
 
 ## 使用ライブラリ
 * Command Line Parser Library：https://commandline.codeplex.com/
-  ライセンス：MIT License
+  (ライセンス：MIT License)
 * Prism：http://msdn.microsoft.com/ja-jp/library/gg406140.aspx
-  ライセンス：MSPL
+  (ライセンス：MSPL)
