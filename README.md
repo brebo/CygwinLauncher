@@ -81,6 +81,9 @@ http://www.microsoft.com/ja-jp/download/details.aspx?id=30653
 作者は一切の責任を負いません。
 
 ## 更新履歴
+Ver 1.0.1
+* C:\ など \ が末尾にくるパスを正しく開けない問題に対処。
+
 Ver 1.0.0
 * 初回リリース。
 
