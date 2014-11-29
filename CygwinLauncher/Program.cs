@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,7 +24,12 @@ namespace Brebo.CygwinLauncher.Launcher
         [STAThread]
         static void Main()
         {
-            string[] args = Environment.GetCommandLineArgs();
+
+            // CygwinLauncher.exe -d "C:\" のように実行すると、args[2] = "C:\\\"" のように
+            // " が入った状態でパースされるMicrosoftのひどい仕様に対処する。
+            //string[] args = Environment.GetCommandLineArgs();
+
+            string[] args = SplitCommandLineArgs(Environment.CommandLine);
 
             CommandLineOptions options = new CommandLineOptions();
             if (!Parser.Default.ParseArguments(args, options))
@@ -96,6 +102,57 @@ namespace Brebo.CygwinLauncher.Launcher
                 File.Delete(commandFilePath);
             }
             catch { }
+        }
+
+        static string[] SplitCommandLineArgs(string argsStr)
+        {
+            List<string> args = new List<string>();
+            StringBuilder buf = new StringBuilder();
+            StringBuilder arg = new StringBuilder();
+
+            bool quoted = false;
+
+            foreach (char ch in argsStr)
+            {
+                switch (ch)
+                {
+                    case '"':
+                        if (quoted)
+                        {
+                            args.Add(arg.ToString());
+                            arg.Clear();
+                            quoted = false;
+                        }
+                        else
+                        {
+                            quoted = true;
+                        }
+                        break;
+
+                    case ' ':
+                        if (quoted)
+                        {
+                            arg.Append(ch);
+                        }
+                        else if (arg.Length > 0)
+                        {
+                            args.Add(arg.ToString());
+                            arg.Clear();
+                        }
+                        break;
+
+                    default:
+                        arg.Append(ch);
+                        break;
+                }
+            }
+
+            if (arg.Length > 0)
+            {
+                args.Add(arg.ToString());
+            }
+
+            return args.ToArray();
         }
 
         static string GetTemplate(string directory, string command)
